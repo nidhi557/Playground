@@ -1,0 +1,49 @@
+import java.util.Scanner;
+class Main
+{
+  public static void main(String args[])
+  {
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    int arr[]=new int[n];
+    for(int i=0;i<n;i++)
+    {
+      arr[i]=sc.nextInt();
+    }
+    int mid=n/2;
+    for(int i=0;i<mid-1;i++)
+    {
+      for(int j=0;j<mid-i-1;j++)
+    {
+      if(arr[j]>arr[j+1])
+      {
+        int temp = arr[j];
+      	arr[j]=arr[j+1];
+        arr[j+1]=temp;
+      }
+      }
+    }
+    
+    for(int i=mid;i<n;i++)
+    {
+      for(int k=mid;k<n-1;k++)
+      {
+        if(arr[k]<arr[k+1])
+      {
+        int temp = arr[k];
+      	arr[k]=arr[k+1];
+        arr[k+1]=temp;
+      }
+      }
+    }
+    for(int i=0;i<n;i++)
+    {
+    System.out.print(arr[i]+" ");
+    }
+   
+      
+      
+    
+  
+}
+}
